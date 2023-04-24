@@ -13,6 +13,11 @@ echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
 echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
 /usr/sbin/sysctl -p
 
+# clam
+apt-get update -y
+apt-get install clamav clamav-daemon
+cp hostcron /etc/cron.d/
+
 exit 0
 
 
