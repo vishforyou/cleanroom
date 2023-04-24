@@ -18,6 +18,11 @@ apt-get update -y
 apt-get install clamav clamav-daemon
 cp hostcron /etc/cron.d/
 
+# banner
+cp gdm /etc/dconf/profile
+cp 01-banner-message /etc/dconf/db/gdm.d/01-banner-message
+dconf update
+
 exit 0
 
 
