@@ -15,13 +15,16 @@ echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
 
 # clam
 apt-get update -y
-apt-get install clamav clamav-daemon
+apt-get install clamav clamav-daemon -y
 cp hostcron /etc/cron.d/
 
 # banner
 cp gdm /etc/dconf/profile
+mkdir -p /etc/dconf/db/gdm.d/
 cp 01-banner-message /etc/dconf/db/gdm.d/01-banner-message
 dconf update
+
+snap install amz-workspaces
 
 exit 0
 
