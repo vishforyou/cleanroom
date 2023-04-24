@@ -1,2 +1,2 @@
 #!/bin/bash
-cp hosts to /etc/
+cp hosts /etc/
