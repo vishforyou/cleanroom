@@ -9,3 +9,4 @@ chmod +x /root/deletedir.sh
 systemctl daemon-reload
 systemctl enable run-before-shutdown-wrkspaces.service
 
+curl https://intoli.com/install-google-chrome.sh | bash
