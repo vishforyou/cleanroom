@@ -13,5 +13,6 @@ curl https://intoli.com/install-google-chrome.sh | bash
 
 python3 -m pip3 install numpy opencv-python pillow labelImg PyMuPDF tqdm
 cp convert_pdf_to_image.py $HOME
+cp README_for_conversion.txt $HOME
 
 
