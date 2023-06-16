@@ -16,7 +16,9 @@ cr_dir=$(ls -1 /volumes/user/home| grep -v 'lost+found')
 pth="/volumes/user/home/${cr_dir}"
 cp convert_pdf_to_image.py /home/{pth}/bin
 mkdir -p /home/{pth}/input_dir
+chmod 777 /home/{pth}/input_dir
 mkdir -p /home/{pth}/output_dir
+chmod 777 /home/{pth}/output_dir
 cp README_for_conversion.txt $pth
 
 
