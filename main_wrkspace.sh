@@ -10,3 +10,6 @@ systemctl daemon-reload
 systemctl enable run-before-shutdown-wrkspaces.service
 
 curl https://intoli.com/install-google-chrome.sh | bash
+
+python3 -m pip3 install numpy opencv-python pillow labelImg PyMuPDF tqdm
+
