@@ -8,8 +8,8 @@ cp run-before-shutdown-wrkspaces.service /etc/systemd/system/
 chmod +x /root/deletedir.sh
 systemctl daemon-reload
 systemctl enable run-before-shutdown-wrkspaces.service
-#curl https://intoli.com/install-google-chrome.sh | bash
-yum install google-chrome --nogpgcheck -y
+curl https://intoli.com/install-google-chrome.sh | bash
+#yum install google-chrome --nogpgcheck -y
 pip3 install --upgrade setuptools
 pip3 install --upgrade pip
 python3 -m pip install numpy opencv-python pillow labelImg PyMuPDF tqdm
