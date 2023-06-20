@@ -1,0 +1,7 @@
+title
+text
+table
+header
+footer
+figure
+demofigure
