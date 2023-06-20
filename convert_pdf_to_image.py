@@ -30,7 +30,7 @@ if isfile(args['input']):
     doc = fitz.open(args['input'])
     pdfname = "_".join(basename(args['input']).split('.')[:-1])  ##// To account for dots in filenames
     print(pdfname)
-    for idx, page in tqdm(enumerate(doc), total=doc.pageCount, desc='Converting Pages to Images'):
+    for idx, page in tqdm(enumerate(doc), total=doc.page_count, desc='Converting Pages to Images'):
         image = cv2.imdecode(np.frombuffer(page.get_pixmap(dpi=args['dpi']).tobytes('ppm'), dtype=np.uint8), cv2.IMREAD_COLOR)
         outputfilename = abspath(join(args['output_dir'], pdfname + f'_page_{idx+1}.jpg'))
         cv2.imwrite(outputfilename, image, [cv2.IMWRITE_JPEG_QUALITY, 95])
