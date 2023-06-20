@@ -13,7 +13,7 @@ import numpy as np
 import cv2
 from tqdm import tqdm
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument('--input_dir', type=str, required=True, default=None, \
+parser.add_argument('--input', type=str, required=True, default=None, \
     help='Provide one PDF file path or the path of a folder containing several PDFs')
 parser.add_argument('--output_dir', type=str, required=True, default=None, \
     help='Provide the path of the folder that will store the resulting images')
