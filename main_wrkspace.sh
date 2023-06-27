@@ -19,8 +19,8 @@ pth="/volumes/user/home/${cr_dir}"
 cp convert_pdf_to_image.py /home/${cr_dir}
 cp convert_pdf_to_image.py /home/${cr_dir}/bin
 mkdir -p /home/${cr_dir}/source
-chmod 777 /home/${cr_dir}/target
-mkdir -p /home/${cr_dir}/source
+chmod 777 /home/${cr_dir}/source
+mkdir -p /home/${cr_dir}/target
 chmod 777 /home/${cr_dir}/target
 cp README_for_conversion.txt /home/${cr_dir}
 cp classes.txt /home/${cr_dir}
