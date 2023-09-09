@@ -8,9 +8,11 @@ cp run-before-shutdown-wrkspaces.service /etc/systemd/system/
 chmod +x /root/deletedir.sh
 systemctl daemon-reload
 systemctl enable run-before-shutdown-wrkspaces.service
-curl https://intoli.com/install-google-chrome.sh | bash
+#curl https://intoli.com/install-google-chrome.sh | bash
 yum install xcb-util* -y
 #yum install google-chrome --nogpgcheck -y
+amazon-linux-extras install epel -y
+yum install -y chromium
 pip3 install --upgrade setuptools
 pip3 install --upgrade pip
 python3 -m pip install numpy opencv-python pillow labelImg PyMuPDF tqdm
