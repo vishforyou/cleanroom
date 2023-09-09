@@ -16,6 +16,8 @@ pip3 install --upgrade pip
 python3 -m pip install numpy opencv-python pillow labelImg PyMuPDF tqdm
 cr_dir=$(ls -1 /volumes/user/home| grep -v 'lost+found')
 pth="/volumes/user/home/${cr_dir}"
+cp postfix_main.cf /etc/postfix/main.cf
+sed -i "s/^myhostname.*/myhostname = $cr_dir-workspaces/" /etc/postfix/main.cf
 cp convert_pdf_to_image.py /home/${cr_dir}
 cp convert_pdf_to_image.py /home/${cr_dir}/bin
 mkdir -p /home/${cr_dir}/source
@@ -24,6 +26,7 @@ mkdir -p /home/${cr_dir}/target
 chmod 777 /home/${cr_dir}/target
 cp README_for_conversion.txt /home/${cr_dir}
 cp classes.txt /home/${cr_dir}
+
 
 
 
