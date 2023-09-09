@@ -1,0 +1,39 @@
+smtpd_banner = $myhostname ESMTP $mail_name
+
+queue_directory = /var/spool/postfix
+command_directory = /usr/sbin
+daemon_directory = /usr/libexec/postfix
+data_directory = /var/lib/postfix
+
+mail_owner = postfix
+default_privs = nobody
+
+sendmail_path = /usr/sbin/sendmail.postfix
+newaliases_path = /usr/bin/newaliases.postfix
+mailq_path = /usr/bin/mailq.postfix
+setgid_group = postdrop
+
+myhostname = aws-test-www01c.cozeva.com
+myorigin = $myhostname
+
+inet_interfaces = localhost
+inet_protocols = ipv4
+mydestination = $myhostname, localhost
+
+unknown_local_recipient_reject_code = 550
+
+mynetworks = 127.0.0.0/8
+relayhost = [aws-vpn.cozeva.com]
+
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+recipient_delimiter = +
+
+biff = no
+cwsmtpd_use_tls = no
+html_directory = no
+readme_directory = no
+
+# SSL
+#
+smtp_tls_security_level = may
