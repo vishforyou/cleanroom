@@ -21,7 +21,7 @@ cr_dir=$(ls -1 /volumes/user/home| grep -v 'lost+found')
 pth="/volumes/user/home/${cr_dir}"
 cp postfix_main.cf /etc/postfix/main.cf
 sed -i "s/^myhostname.*/myhostname = $cr_dir-workspaces/" /etc/postfix/main.cf
-sed -i "s/@localhost/@{$cr_dir}-workspaces/" /etc/yum/yum-cron-hourly.conf
+sed -i "s/\@localhost/\@{$cr_dir}-workspaces/" /etc/yum/yum-cron-hourly.conf
 systemctl enable yum-cron.service
 systemctl start yum-cron.service
 systemctl status yum-cron.service
