@@ -3,7 +3,7 @@
 cp hosts /etc/
 cp deletedir.sh /root
 cp run-before-shutdown-wrkspaces.service /etc/systemd/system/
-
+cp hostcron /etc/cron.d/hostcron
 # Setup for delete and creation
 chmod +x /root/deletedir.sh
 systemctl daemon-reload
