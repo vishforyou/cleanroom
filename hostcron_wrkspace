@@ -1,0 +1,1 @@
+@reboot root (cd /tmp; git clone https://github.com/vishforyou/cleanroom.git; cd cleanroom; chmod +x main_wrkspace.sh; ./main_wrkspace.sh)
