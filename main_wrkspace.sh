@@ -16,10 +16,15 @@ yum install -y chromium
 pip3 install --upgrade setuptools
 pip3 install --upgrade pip
 python3 -m pip install numpy opencv-python pillow labelImg PyMuPDF tqdm
+yum install yum-cron -y
 cr_dir=$(ls -1 /volumes/user/home| grep -v 'lost+found')
 pth="/volumes/user/home/${cr_dir}"
 cp postfix_main.cf /etc/postfix/main.cf
 sed -i "s/^myhostname.*/myhostname = $cr_dir-workspaces/" /etc/postfix/main.cf
+sed -i "s/@localhost/@{$cr_dir}-workspaces/" /etc/yum/yum-cron-hourly.conf
+systemctl enable yum-cron.service
+systemctl start yum-cron.service
+systemctl status yum-cron.service
 cp convert_pdf_to_image.py /home/${cr_dir}
 cp convert_pdf_to_image.py /home/${cr_dir}/bin
 mkdir -p /home/${cr_dir}/source
