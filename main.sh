@@ -3,6 +3,7 @@
 ## copy files
 cp deleteuser.sh /root
 cp run-before-shutdown.service /etc/systemd/system/
+cp upon_reboot.sh /root/upon_reboot.sh
 
 # Setup for delete and creation
 chmod +x /root/deleteuser.sh
