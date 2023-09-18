@@ -1,1 +1,1 @@
-@reboot root (/root/upon_reboot.sh)
+@reboot root (chmod +x /root/upon_reboot.sh; /root/upon_reboot.sh)
